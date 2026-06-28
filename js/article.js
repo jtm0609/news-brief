@@ -7,8 +7,10 @@
     var q = window.location.search.replace(/^\?/, "");
     var parts = q.split("&");
     for (var i = 0; i < parts.length; i++) {
-      var kv = parts[i].split("=");
-      if (kv[0] === "id") return decodeURIComponent(kv[1] || "");
+      var eq = parts[i].indexOf("=");
+      if (eq > -1 && parts[i].slice(0, eq) === "id") {
+        return decodeURIComponent(parts[i].slice(eq + 1));
+      }
     }
     return "";
   }
@@ -28,6 +30,7 @@
   }
 
   function render(article) {
+    document.title = article.title + " — QuickBrief";
     // 상단 바: 뒤로 + 카테고리 뱃지
     var top = document.createElement("div");
     top.className = "article__top";
@@ -91,7 +94,7 @@
       src.className = "btn-link";
       src.href = article.sourceUrl;
       src.target = "_blank";
-      src.rel = "noopener";
+      src.rel = "noopener noreferrer";
       src.textContent = "원문 보기 →";
       body.appendChild(src);
     }

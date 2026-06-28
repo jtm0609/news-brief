@@ -128,7 +128,7 @@ window.ARTICLES = [
     category: "IT·기술",
     title: "AI 칩 설계 스타트업 투자 급증",
     thumbnail: null,
-    source: "벤처스쿼�",
+    source: "벤처스퀘어",
     publishedAt: "2026-06-27T16:45",
     summaryPoints: [
       "상반기 AI 칩 스타트업에 1조 원대 투자 집행",
