@@ -1,3 +1,15 @@
+import { Routes, Route, Navigate } from 'react-router-dom'
+import Header from './components/Header.jsx'
+import Home from './pages/Home.jsx'
+
 export default function App() {
-  return <h1 style={{ padding: 16 }}>QuickBrief (React 이전 진행 중)</h1>
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </>
+  )
 }
