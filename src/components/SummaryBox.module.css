@@ -1,0 +1,7 @@
+.box {
+  background: var(--summary-bg); border: 1px solid #d8e6fb;
+  border-radius: 12px; padding: 16px 18px; margin-bottom: 18px;
+}
+.title { font-size: 15px; margin: 0 0 10px; color: var(--accent); }
+.list { margin: 0; padding-left: 18px; }
+.list li { margin: 6px 0; font-size: 15px; }

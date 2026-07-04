@@ -1,0 +1,18 @@
+.article { max-width: 720px; margin: 0 auto; padding: 16px 16px 64px; }
+.top { display: flex; align-items: center; gap: 12px; margin: 8px 0 16px; }
+.btnLink { color: var(--accent); font-weight: 600; font-size: 14px; }
+.badge {
+  font-size: 12px; padding: 3px 10px; border-radius: 999px;
+  background: var(--summary-bg); color: var(--accent); font-weight: 600;
+}
+.title { font-size: 26px; line-height: 1.35; margin: 0 0 6px; }
+.meta { color: var(--text-dim); font-size: 13px; margin: 0 0 20px; }
+.toggle {
+  width: 100%; padding: 12px; border: 1px solid var(--line);
+  background: #fff; border-radius: 10px; cursor: pointer;
+  font-size: 15px; font-weight: 600; color: var(--text);
+}
+.toggle:hover { background: #f8f9fa; }
+.body { margin-top: 16px; }
+.body p { margin: 0 0 14px; font-size: 16px; }
+.notfound { text-align: center; padding: 64px 16px; display: grid; gap: 16px; }
