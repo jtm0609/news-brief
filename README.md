@@ -1,23 +1,35 @@
 # QuickBrief
 
-출퇴근 등 짧은 시간에 뉴스·정보를 핵심만 빠르게 파악하는 웹 서비스 (1차: 더미 데이터 UI).
+출퇴근 등 짧은 시간에 뉴스·정보를 핵심만 빠르게 파악하는 웹 서비스 (React + Vite).
+
+## 요구 사항
+
+- Node.js 20+ (LTS)
 
 ## 실행 방법
 
-빌드 도구가 필요 없습니다. `index.html`을 브라우저로 더블클릭해 여세요.
+```
+npm install
+npm run dev      # 개발 서버
+npm run build    # 정적 산출물(dist/)
+npm run preview  # 빌드 미리보기
+npm test         # api 계층 테스트(Vitest)
+```
 
 ## 구조
 
-- `index.html` — 메인(카테고리 섹션 + 반응형 카드 그리드)
-- `article.html` — 상세(핵심 요약 → 자세히 보기)
-- `js/data.js` — 더미 글 데이터
-- `js/api.js` — 데이터 공급 격리 계층 (후속 단계에서 RSS/AI로 교체)
-- `js/home.js` / `js/article.js` — 화면 렌더링
-- `css/style.css` — 스타일
-- `tests/run-tests.html` — 데이터/공급 계층 브라우저 테스트
+- `index.html` — Vite 진입점(단일 HTML)
+- `src/main.jsx` — 앱 마운트 + HashRouter
+- `src/App.jsx` — 라우트(`/` 목록, `/article/:id` 상세)
+- `src/data/articles.js` — 더미 기사 데이터
+- `src/lib/api.js` — 데이터 공급 격리 계층(후속 RSS/AI 연동 시 이 파일만 교체)
+- `src/pages/` — Home, Article 화면
+- `src/components/` — Header, CategorySection, ArticleCard, SummaryBox
+- `src/styles/global.css` — 전역 변수/리셋
 
 ## 후속 단계
 
-- `js/api.js` 내부를 실제 RSS/뉴스 API + AI 요약 호출로 교체
-- 검색 기능 동작 구현
-- (선택) React + Vite로 렌더링 계층 이전
+- TypeScript 전환
+- BrowserRouter 전환 및 정적 배포(GitHub Pages)
+- 검색 기능 동작, 다크모드
+- `src/lib/api.js`를 실제 RSS/뉴스 API + AI 요약으로 교체
