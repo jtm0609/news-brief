@@ -1,6 +1,4 @@
-// js/data.js
-// 더미 글 데이터. 모듈 시스템을 쓰지 않으므로 window 전역에 노출한다.
-window.ARTICLES = [
+export const ARTICLES = [
   // ── 경제 (econ-001 ~ econ-005) ──
   {
     id: "econ-001",
